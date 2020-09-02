@@ -14,7 +14,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'admin-cli-token', usernameVariable: 'JENKINS_CLI_USR', passwordVariable: 'JENKINS_CLI_PSW')]) {
           sh """
             curl -O http://teams-hu-orgnization/teams-hu-orgnization/jnlpJars/jenkins-cli.jar
-            alias cli='java -jar jenkins-cli.jar -s http://teams-Hu-Orgnization/teams-Hu-Orgnization/ -auth $JENKINS_CLI_USR:$JENKINS_CLI_PSW'
+            alias cli='java -jar jenkins-cli.jar -s http://teams-hu-orgnization/teams-hu-orgnization/ -auth $JENKINS_CLI_USR:$JENKINS_CLI_PSW'
             cli pipeline-template-catalogs --put < create-pipeline-template-catalog.json
           """
         }
